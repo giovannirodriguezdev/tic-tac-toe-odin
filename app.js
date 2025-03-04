@@ -51,6 +51,8 @@ const GameController = (() => {
 
     const playTurn = (index) => {
         if (!gameOver && Gameboard.updateBoard(index, currentPlayer.marker)) {
+            DisplayController.render();
+
             const winner = checkWin();
             if (winner) {
                 gameOver = true;
